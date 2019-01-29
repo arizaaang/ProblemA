@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+	<center>
+		
+
+	<input type="number" placeholder="0" id="ndisplay" name="display" disabled>
+	<br>
+	<br>
+
+            	<td><button onclick="number(this)">7</button>
+				<td><button onclick="number(this)">8</button>
+				<td><button onclick="number(this)">9</button>
+				<td><button id="ndivide" onclick="divide()">/</button>
+				<br>
+				<td><button onclick="number(this)">4</button>
+				<td><button onclick="number(this)">5</button>
+				<td><button onclick="number(this)">6</button>
+				<td><button id="nmultiply" onclick="multiply()">*</button>
+				<br>
+				<td><button onclick="number(this)">1</button>
+				<td><button onclick="number(this)">2</button>
+				<td><button onclick="number(this)">3</button>
+				<td><button id="nminus" onclick="subtract()">-</button>
+				<br>
+				<td><button onclick="number(this)">0</button>
+				<td><button id="ndecimal" onclick="dot()">.</button>
+				<td><button id="nplus" onclick="add()">+</button>
+				<td><button id="nequals" onclick="result()">=</button>
+
+        
+	
+	
+
+
+	<script type="text/javascript">
+		let n = document.getElementById('ndisplay');
+		let numberholder;
+		let optr;
+		function number(e){
+			n.value += e.innerHTML;
+		}
+		function add() {
+			optr = "+";
+			numberholder = parseInt(n.value);
+			n.value = "";
+		}
+		function subtract() {
+			optr = "-";
+			numberholder = parseInt(n.value);
+			n.value = "";
+		}
+		function multiply() {
+			optr = "*";
+			numberholder = parseInt(n.value);
+			n.value = "";
+		}
+		function divide() {
+			optr = "/";
+			numberholder = parseInt(n.value);
+			n.value = "";
+		}
+		function result() {
+			switch (optr){
+				case "+":
+						n.value = numberholder + parseInt(n.value);
+						break;
+				case "-":
+						n.value = numberholder - parseInt(n.value);
+						break;
+				case "*":
+						n.value = numberholder * parseInt(n.value);
+						break;
+				case "/":
+						n.value = numberholder / parseInt(n.value);
+						break;
+				default:
+						console.log('no operator defined');
+			}
+		}
+	</script>
+
+
+
+	</center>
+</body>
+</html>
