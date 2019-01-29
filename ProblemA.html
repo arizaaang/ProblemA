@@ -11,10 +11,11 @@
 	<br>
 	<br>
 
-            	<td><button onclick="number(this)">7</button>
-				<td><button onclick="number(this)">8</button>
-				<td><button onclick="number(this)">9</button>
-				<td><button id="ndivide" onclick="divide()">/</button>
+            	<button onclick="number(this)">7</button>
+				<button onclick="number(this)">8</button>
+				<button onclick="number(this)">9</button>
+				<button id="ndivide" onclick="divide()">/</button>
+				<button id="nmodulo" onclick="modulo()">%</button>
 				<br>
 				<td><button onclick="number(this)">4</button>
 				<td><button onclick="number(this)">5</button>
@@ -30,6 +31,8 @@
 				<td><button id="ndecimal" onclick="dot()">.</button>
 				<td><button id="nplus" onclick="add()">+</button>
 				<td><button id="nequals" onclick="result()">=</button>
+					<button id="nclear" onclick="clear()">CLEAR</button>
+
 
         
 	
@@ -63,6 +66,12 @@
 			numberholder = parseInt(n.value);
 			n.value = "";
 		}
+
+		function modulo() {
+			optr = "%";
+			numberholder = parseInt(n.value);
+			n.value = "";
+		}
 		function result() {
 			switch (optr){
 				case "+":
@@ -77,6 +86,8 @@
 				case "/":
 						n.value = numberholder / parseInt(n.value);
 						break;
+				case "%":
+						n.value = numberholder / parseInt(n.value);
 				default:
 						console.log('no operator defined');
 			}
